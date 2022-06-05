@@ -64,7 +64,7 @@ class PostFragment : Fragment(), AdapterView.OnItemSelectedListener {
             if(urlImagen!=null){
                 var post = Post(usuarioLogueado!!.id,urlImagen!!, descripcionFoto, fechaPublicacion, ciudadSeleccionada)
                 Toast.makeText(requireContext(), "La foto fue posteada!!", Toast.LENGTH_SHORT).show()
-                //RetoInsta.myDataBase.guardarPublicaciones(post)
+                RetoInsta.myDataBase.savePosts(post)
             }else{
                 Toast.makeText(requireContext(), "Toma una foto!!", Toast.LENGTH_SHORT).show()
             }

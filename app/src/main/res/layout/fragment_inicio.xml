@@ -28,16 +28,6 @@
                    android:src="@drawable/instalogo" />
 
 
-
-               <ImageView
-                   android:id="@+id/send"
-                   android:layout_width="36dp"
-                   android:layout_height="28dp"
-                    android:layout_alignParentEnd="true"
-                   android:layout_centerInParent="true"
-                   android:src="@drawable/send_icon" />
-
-
            </RelativeLayout>
        </androidx.appcompat.widget.Toolbar>
 

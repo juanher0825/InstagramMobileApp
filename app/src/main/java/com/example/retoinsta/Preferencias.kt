@@ -18,8 +18,8 @@ class Preferencias(val context: Context) {
     fun newUser(){
         if(database.getString("ALFA","").toString().isEmpty()||database.getString("BETA","").toString().isEmpty()){
 
-            val usuarioAlfa = Usuario(UUID.randomUUID().toString(),"Alfa","El Alfa Guapi","Me la pela Apps #Es broma","")
-            val usuarioBeta = Usuario(UUID.randomUUID().toString(),"Beta","El Beta Guapi","Me la suda Apps #Es broma","")
+            val usuarioAlfa = Usuario(UUID.randomUUID().toString(),"Alfa","El Alfa","Viviendo la vida con Apps","")
+            val usuarioBeta = Usuario(UUID.randomUUID().toString(),"Beta","El Beta","Viviendo la vida con Apps","")
             val alfaString = gson.toJson(usuarioAlfa)
             val betaString = gson.toJson(usuarioBeta)
             database.edit().putString("ALFA", alfaString).apply()
@@ -77,6 +77,17 @@ class Preferencias(val context: Context) {
         if(posts!!.isEmpty()) return listOfPosts
         listOfPosts = gson.fromJson(posts, Array<Post>::class.java).toMutableList()
         return listOfPosts
+    }
+
+    fun savePosts(post1: Post){
+        var posts = getPosts()
+        posts.add(post1)
+
+        posts.sortByDescending {
+            it.fechaPost
+        }
+        database.edit().putString(post, gson.toJson(posts)).apply()
+
     }
 
 
