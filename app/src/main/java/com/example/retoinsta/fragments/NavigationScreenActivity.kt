@@ -9,7 +9,7 @@ import com.example.retoinsta.databinding.ActivityNavigationScreenBinding
 class NavigationScreenActivity : AppCompatActivity() {
     private lateinit var inicioFragment: InicioFragment
     private lateinit var postFragment: PostFragment
-    //private lateinit var profileFragment: ProfileFragment
+    private lateinit var profileFragment: ProfileFragment
 
 
     private lateinit var binding: ActivityNavigationScreenBinding
@@ -22,7 +22,7 @@ class NavigationScreenActivity : AppCompatActivity() {
         setContentView(view)
         inicioFragment = InicioFragment.newInstance()
         postFragment = PostFragment.newInstance()
-        //profileFragment = ProfileFragment.newInstance()
+        profileFragment = ProfileFragment.newInstance()
 
         mostrarFragment(inicioFragment)
         binding.barraNavegacion.setOnNavigationItemSelectedListener { menuItem ->
@@ -32,7 +32,7 @@ class NavigationScreenActivity : AppCompatActivity() {
             } else if (menuItem.itemId == R.id.postItem) {
                 mostrarFragment(postFragment)
             }  else if (menuItem.itemId == R.id.profileItem) {
-                //mostrarFragment(profileFragment)
+                mostrarFragment(profileFragment)
             }
 
             true
