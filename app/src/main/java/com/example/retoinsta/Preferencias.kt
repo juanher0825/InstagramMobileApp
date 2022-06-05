@@ -45,6 +45,12 @@ class Preferencias(val context: Context) {
         else return null
     }
 
+    fun updateUser(user: Usuario){
+
+        val deUsuarioAString = gson.toJson(user)
+        database.edit().putString(id,deUsuarioAString).apply()
+    }
+
     fun getUserByID(uuid: String): Usuario {
 
         val usuarioAlfa = gson.fromJson(database.getString("ALFA",""), Usuario::class.java)

@@ -1,11 +1,13 @@
 package com.example.retoinsta.fragments
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.retoinsta.AccountSettingActivity
 import com.example.retoinsta.RetoInsta.Companion.myDataBase
 import com.example.retoinsta.databinding.FragmentProfileBinding
 
@@ -24,7 +26,7 @@ class ProfileFragment : Fragment() {
         val view = binding.root
 
         binding.editarCuentaBTN.setOnClickListener {
-            //startActivity(Intent(context, AccountSettingsActivity::class.java))
+            startActivity(Intent(context, AccountSettingActivity::class.java))
         }
 
         verificarDatosUsuario()
