@@ -1,6 +1,8 @@
-package com.example.retoinsta.model
+package com.example.retoinsta
 
 import android.content.Context
+import com.example.retoinsta.model.Post
+import com.example.retoinsta.model.Usuario
 import com.google.gson.Gson
 import java.util.*
 
@@ -66,6 +68,15 @@ class Preferencias(val context: Context) {
     fun logout(){
 
         database.edit().remove(userLogin).apply()
+    }
+
+    fun getPosts() : MutableList<Post>{
+        var listOfPosts = mutableListOf<Post>()
+        val posts = database.getString(post,"")
+
+        if(posts!!.isEmpty()) return listOfPosts
+        listOfPosts = gson.fromJson(posts, Array<Post>::class.java).toMutableList()
+        return listOfPosts
     }
 
 
