@@ -63,7 +63,7 @@
                 >
 
                 <ImageView
-                    android:id="@+id/fotoPerfilFragment"
+                    android:id="@+id/photoPerFragment"
                     android:layout_width="wrap_content"
                     android:layout_height="139dp"
                     android:layout_weight="1"
@@ -165,7 +165,7 @@
                     </LinearLayout>
 
                     <Button
-                        android:id="@+id/editarCuentaBTN"
+                        android:id="@+id/editBtn"
                         android:layout_width="170dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -191,7 +191,7 @@
                 >
 
                 <TextView
-                    android:id="@+id/nombreUsuarioET"
+                    android:id="@+id/nombreET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -201,7 +201,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/descripcionBioET"
+                    android:id="@+id/descriptionET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Bio"

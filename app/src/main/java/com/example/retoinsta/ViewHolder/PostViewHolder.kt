@@ -15,13 +15,13 @@ import java.time.Month
 import java.util.*
 
 class PostViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView){
-    var nombreUsuarioPost : TextView = itemView.findViewById(R.id.nombreUsuarioPost)
-    var descripcionPostET: TextView = itemView.findViewById(R.id.descripcionPostET)
-    var fechitaPostET: TextView = itemView.findViewById(R.id.fechitaPostET)
-    var ubicacionPostET: TextView = itemView.findViewById(R.id.ubicacionPostET)
+    var nombreUsuarioPost : TextView = itemView.findViewById(R.id.userPost)
+    var descripcionPostET: TextView = itemView.findViewById(R.id.descriptionPost)
+    var fechitaPostET: TextView = itemView.findViewById(R.id.datePost)
+    var ubicacionPostET: TextView = itemView.findViewById(R.id.ubiPost)
     var imagenPublicacion : ImageView = itemView.findViewById(R.id.imagenPublicacion)
-    var fotoPerfilPost : ImageView = itemView.findViewById(R.id.fotoPerfilPost)
-    var nombreUsuarioAbajo : TextView = itemView.findViewById(R.id.nombreUsuarioAbajo)
+    var fotoPerfilPost : ImageView = itemView.findViewById(R.id.picPost)
+    var nombreUsuarioAbajo : TextView = itemView.findViewById(R.id.userDPost)
 
     fun bind(post : Post){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

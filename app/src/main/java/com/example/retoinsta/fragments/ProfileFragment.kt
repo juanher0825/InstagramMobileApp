@@ -25,7 +25,7 @@ class ProfileFragment : Fragment() {
 
         val view = binding.root
 
-        binding.editarCuentaBTN.setOnClickListener {
+        binding.editBtn.setOnClickListener {
             startActivity(Intent(context, AccountSettingActivity::class.java))
         }
 
@@ -36,10 +36,10 @@ class ProfileFragment : Fragment() {
 
     fun verificarDatosUsuario() {
 
-        binding.nombreUsuarioET.setText(myDataBase.getUserLogin()?.usuario)
-        binding.descripcionBioET.setText(myDataBase.getUserLogin()?.biografia)
-        binding.fotoPerfilFragment.setImageBitmap(BitmapFactory.decodeFile(myDataBase.getUserLogin()!!.foto))
-        binding.usuarioFragment.setText(myDataBase.getUserLogin()?.usuario)
+        binding.nombreET.setText(myDataBase.getUserLogin()?.usuario)
+        binding.descriptionET.setText(myDataBase.getUserLogin()?.biografia)
+        binding.photoPerFragment.setImageBitmap(BitmapFactory.decodeFile(myDataBase.getUserLogin()!!.foto))
+        binding.usuarioFragment.setText(myDataBase.getUserLogin()?.nombre)
     }
 
     override fun onPause() {

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/fotoPerfilPost"
+            android:id="@+id/picPost"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentLeft="true"
@@ -22,23 +22,23 @@
             android:src="@drawable/profile" />
 
         <TextView
-            android:id="@+id/nombreUsuarioPost"
+            android:id="@+id/userPost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/fotoPerfilPost"
+            android:layout_toRightOf="@id/picPost"
             android:text="username"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:id="@+id/ubicacionPostET"
+            android:id="@+id/ubiPost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nombreUsuarioPost"
+            android:layout_below="@+id/userPost"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/fotoPerfilPost"
+            android:layout_toRightOf="@id/picPost"
             android:text="location"
             android:textColor="@color/black"
             android:textSize="15dp"
@@ -73,7 +73,7 @@
         android:layout_marginBottom="10dp">
 
         <TextView
-            android:id="@+id/nombreUsuarioAbajo"
+            android:id="@+id/userDPost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="username"
@@ -81,21 +81,21 @@
             android:textStyle="bold"></TextView>
 
         <TextView
-            android:id="@+id/descripcionPostET"
+            android:id="@+id/descriptionPost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/nombreUsuarioAbajo"
+            android:layout_toRightOf="@id/userDPost"
             android:text="Here goes the caption..."
             android:textColor="@color/black">
 
         </TextView>
 
         <TextView
-            android:id="@+id/fechitaPostET"
+            android:id="@+id/datePost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/nombreUsuarioAbajo"
+            android:layout_below="@id/userDPost"
             android:layout_marginTop="5dp"
             android:text="date">
 

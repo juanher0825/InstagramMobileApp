@@ -45,8 +45,8 @@ class AccountSettingActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        cerrarPerfil = findViewById(R.id.cerrarPerfilbtn)
-        cerrarSesion = findViewById(R.id.cerrarSesion_btn)
+        cerrarPerfil = findViewById(R.id.closeBtn)
+        cerrarSesion = findViewById(R.id.logoutBtn)
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -66,7 +66,7 @@ class AccountSettingActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.guardarCambiosbtn.setOnClickListener {
+        binding.saveBtn.setOnClickListener {
             updateUserInfo()
 
             Toast.makeText(
@@ -80,14 +80,14 @@ class AccountSettingActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.cerrarPerfilbtn.setOnClickListener {
+        binding.closeBtn.setOnClickListener {
             val intent = Intent(this, NavigationScreenActivity::class.java)
             startActivity(intent)
             finish()
         }
 
 
-        binding.cambiarFotoCamarabtn.setOnClickListener {
+        binding.openCameraBtn.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             file = File("${getExternalFilesDir(null)}/$FILE_NAME")
             val uri = FileProvider.getUriForFile(this, packageName, file!!)
@@ -95,7 +95,7 @@ class AccountSettingActivity : AppCompatActivity() {
             launcherCamera.launch(intent)
         }
 
-        binding.cambiarFotoGaleriabtn.setOnClickListener {
+        binding.openGaleyBtn.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type ="image/*"
             galleryLauncher.launch(intent)
@@ -106,12 +106,12 @@ class AccountSettingActivity : AppCompatActivity() {
 
     private fun updateUserInfo() {
 
-        if (!(binding.nombreUsuarioET.text.toString() == "" || binding.nombrePerfilET.text.toString() == "")) {
+        if (!(binding.userET.text.toString() == "" || binding.nombreET.text.toString() == "")) {
 
 
-            user!!.nombre = binding.nombreUsuarioET.text.toString()
-            user!!.usuario = binding.nombrePerfilET.text.toString()
-            user!!.biografia = binding.descripcionBioET.text.toString()
+            user!!.nombre = binding.userET.text.toString()
+            user!!.usuario = binding.nombreET.text.toString()
+            user!!.biografia = binding.descriptionET.text.toString()
 
             if(!imgPath.isNullOrEmpty()&&!imgPath.contentEquals(user?.foto)){
                 user!!.foto = imgPath!!
@@ -126,9 +126,9 @@ class AccountSettingActivity : AppCompatActivity() {
     }
 
     fun checkDetails() {
-        binding.nombreUsuarioET.setText(user?.nombre)
-        binding.nombrePerfilET.setText(user?.usuario)
-        binding.descripcionBioET.setText(user?.biografia)
+        binding.userET.setText(user?.nombre)
+        binding.nombreET.setText(user?.usuario)
+        binding.descriptionET.setText(user?.biografia)
 
 
     }
@@ -142,7 +142,7 @@ class AccountSettingActivity : AppCompatActivity() {
             imgPath = file?.path!!
             val bitmap = BitmapFactory.decodeFile(file?.path)
             val thumbnail = Bitmap.createScaledBitmap(bitmap, bitmap.width/4, bitmap.height/4, true)
-            binding.editFotoPerfilView.setImageBitmap(thumbnail)
+            binding.picEdit.setImageBitmap(thumbnail)
         }else if(activityResult.resultCode== RESULT_CANCELED){
             Toast.makeText(this, "No tomó foto", Toast.LENGTH_SHORT).show()
         }
@@ -155,7 +155,7 @@ class AccountSettingActivity : AppCompatActivity() {
             val uriImage = result.data?.data
             imgPath = UtilDomi.getPath(this, uriImage!!)
             uriImage?.let{
-                binding.editFotoPerfilView.setImageURI(uriImage)
+                binding.picEdit.setImageURI(uriImage)
             }
         }
     }
